@@ -6,7 +6,7 @@ from base_caching import BaseCaching
 
 class LIFOCache(BaseCaching):
     """
-    LIFOCache is a caching system that follows 
+    LIFOCache is a caching system that follows
     the Last-In First-Out (LIFO) algorithm.
     If the number of items exceeds BaseCaching.MAX_ITEMS,
       the last item added will be discarded.
