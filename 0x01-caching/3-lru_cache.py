@@ -6,19 +6,22 @@ from base_caching import BaseCaching
 
 class LRUCache(BaseCaching):
     """
-    LRUCache is a caching system that implements the Least Recently Used (LRU) algorithm.
-    When the number of items in the cache exceeds MAX_ITEMS, the least recently used item is discarded.
+    LRUCache is a caching system that implements the Least Recently
+      Used (LRU) algorithm.
+    When the number of items in the cache exceeds MAX_ITEMS,
+      the least recently used item is discarded.
     """
 
     def __init__(self):
         """Initialize the class and call the parent init"""
         super().__init__()
-        self.lru_order = []  # This will maintain the order of use of cache items
+        self.lru_order = []
 
     def put(self, key, item):
         """
         Add an item to the cache using the LRU algorithm.
-        If the cache exceeds its limit, the least recently used item is removed.
+        If the cache exceeds its limit,
+          the least recently used item is removed.
         """
         if key is None or item is None:
             return
@@ -46,6 +49,6 @@ class LRUCache(BaseCaching):
 
         # Update the LRU order
         self.lru_order.remove(key)
-        self.lru_order.append(key)
+        self.lru_order.append(key)  # Mark as recently used
 
         return self.cache_data.get(key)
